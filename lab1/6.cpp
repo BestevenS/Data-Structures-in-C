@@ -1,25 +1,29 @@
 #include <stdio.h>
-#define N 3
+
+#define N 10
+
 float avg(float *);
-main()
+
+int main()
 {
-	float a,c[N];
-	for(int i=0; i<N; i++)
+	float a, c[N];
+	for(int i = 0; i < N; i++)
 	{
-		printf("%d/%d: ",i+1,N);
-		scanf("%f",c+i);
+		printf("%d/%d: ", i+1, N);
+		scanf("%f", c+i);
 	}
-	a=avg(c);
-	printf("O mesos oros einai: %f",a);
+	
+	printf("The avg is: %f", avg(c));
+	
+	return 0;
 }
 float avg(float *c)
 {
-	int i;
-	float a,x=0.0;
-	for(i=0; i<N; i++)
+	float x = 0.0;
+	for(int i = 0; i < N; i++)
 	{
-		x=c[i]+x;
+		x = c[i] + x;
 	}
-	a=x/N;
-	return a;
+	x = x / N;
+	return x;
 }

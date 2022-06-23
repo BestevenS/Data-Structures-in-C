@@ -1,21 +1,27 @@
 #include <stdio.h>
-#define N 3
+
+#define N 10
+
 void input(int *);
 void addarray(int *,int *,int *);
 void display(int *);
-main()
+
+int main()
 {
 	int pin1[N],pin2[N],pin3[N];
+	
 	input(pin2);
 	input(pin3);
 	addarray(pin1,pin2,pin3);
 	display(pin1);
+
+	return 0;
 }
 void display(int *p)
 {
 	for(int i=0; i<N; i++)
 	{
-		printf("%d/%d: %d\n",i+1,N,p[i]);
+		printf("%d/%d: %d\n", i+1, N, p[i]);
 	}
 }
 void addarray(int *p,int *p1,int *p2)
@@ -32,5 +38,6 @@ void input(int *p)
 		printf("%d/%d: ",i+1,N);
 		scanf("%d",p+i);
 	}
-	printf("Pinakas gematos!!!\n");
+	
+	printf("Full array!!!\n");
 }

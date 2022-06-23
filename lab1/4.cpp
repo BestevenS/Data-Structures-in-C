@@ -1,28 +1,30 @@
 #include <stdio.h>
-#define N 3
+#define N 10
 int max(int *,int);
-main()
+int main()
 {
-	int list[N],i,k,x;
+	int list[N], i, k = 0, x;
 	for(i=0; i<N; i++)
 	{
-		printf("Dwse timi sti lista i 0 gia telos: ");
+		printf("Give int to list\nGive 0 to end: ");
 		scanf("%d",&x);
-		if(x==0)
+		if(x == 0)
 			break;
-		list[i]=x;
-		k=i;
+		list[i] = x;
+		k = i + 1;
 	}
-	x=max(list,k);
-	printf("To megisto stoixeio tis lista einai %d",x);
+
+	printf("The max argument of list is %d", max(list, k));
+
+	return 0;
 }
-int max(int *list,int k)
+int max(int *list, int k)
 {
-	int meg=list[0];
-	for(int i=1; i<k; i++)
+	int bigger = list[0];
+	for(int i = 1; i < k; i++)
 	{
-		if(meg<list[i])
-			meg=list[i];
+		if(bigger < list[i])
+			bigger = list[i];
 	}
-	return meg;
+	return bigger;
 }
