@@ -1,27 +1,32 @@
 #include <stdio.h>
 #include <string.h>
+
 #define R 5
 #define C 20
-main()
+
+int main()
 {
-	int max=0,i=0,x=0,j;
+	int max = 0,i = 0,x = 0, j;
 	char pin[R][C];
-	while(i<R)
+	while(i < R)
 	{
-		printf("Dwse %di sumboloseira: \n",i+1);
-		gets(pin[i]);
-		x+=strlen(pin[i]);
-		if(max<strlen(pin[i]))
-			max=strlen(pin[i]);
-		if(strlen(pin[i])==0)
+		printf("Give the number %d string: \n",i+1);
+		scanf("%s", pin+i);		// gets(pin[i]);
+		fflush(stdin);
+		x += strlen(pin[i]);
+		if(max < strlen(pin[i]))
+			max = strlen(pin[i]);
+		if(strlen(pin[i]) == 0)
 			break;
 		i++;
 	}
-	printf("O arithmos twn xaraktirwn pou dwthike einai: %d\n",x);
-	for(j=0; j<i; j++)
+	printf("The number of characters you give is: %d\n",x);
+	for(j = 0; j < i; j++)
 	{
 		puts(pin[j]);
 	}
-	printf("I megaluteri sumboloseira eixe megethos %d",max);
+
+	printf("The biggest string has %d length", max);
 	
+	return 0;
 }

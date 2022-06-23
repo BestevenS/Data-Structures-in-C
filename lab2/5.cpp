@@ -1,37 +1,42 @@
 #include <stdio.h>
-#define N 3
-int t(int pin[][N]);	//tautotikos
-main()
+
+#define N 5
+
+int t(int array[][N]);	//tautotikos
+
+int main()
 {
-	int i,j,pinax[N][N];
-	for(i=0; i<N; i++)
-		for(j=0; j<N; j++)
+	int i, j, array[N][N];
+	for(i = 0; i < N; i++)
+		for(j = 0; j < N; j++)
 		{
-			printf("Dwse to %do stoixeio tis grammis %d: ",j+1,i+1);
-			scanf("%d",pinax[i]+j);
+			printf("Give the %d int of %d array: ",j+1,i+1);
+			scanf("%d", array[i]+j);
 		}
-	for(i=0; i<N; i++)
+	for(i = 0; i < N; i++)
 	{
-		for(j=0; j<N; j++)
+		for(j = 0; j < N; j++)
 		{
-			printf("pinax[%d][%d]: %d\t",i,j,pinax[i][j]);
+			printf("array[%d][%d]: %d\t", i, j, array[i][j]);
 		}
 		printf("\n");
 	}
-	if(t(pinax))
+	if(t(array))
 		printf("\nTautotikos!!!");
+	
+	return 0;
 }
-int t(int pin[][N])		//tautotikos
+int t(int array[][N])		//tautotikos
 {
-	int x=0,i;
-	if(N==N)
+	int x = 0, i;
+	if(N == N)
 	{
-		printf("Einai tetragwnikos!!!");
-		for(i=0; i<N; i++)	//i+=N+1
-			if(pin[i][i])
+		printf("Quadratic!!!");
+		for(i = 0; i < N; i++)	//i+=N+1
+			if(array[i][i])
 				x++;
 	}
-	if(x==N)
+	if(x == N)
 		return 1;
 	return 0;
 }
